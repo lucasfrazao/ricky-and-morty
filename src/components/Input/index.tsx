@@ -1,5 +1,5 @@
-import { MagnifyingGlass } from 'phosphor-react'
 import { InputHTMLAttributes } from 'react'
+import { MagnifyingGlass } from 'phosphor-react'
 import { StyledInput } from './styles'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -8,7 +8,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export function Input({ placeholder, ...rest }: InputProps) {
   return (
-    <StyledInput>
+    <StyledInput className="styled-input">
       <MagnifyingGlass size={18} />
       <input type="text" placeholder={placeholder} {...rest} />
     </StyledInput>

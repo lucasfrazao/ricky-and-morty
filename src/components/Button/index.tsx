@@ -4,8 +4,13 @@ import { Container } from './styles'
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
   onClick: () => void
+  disabled?: boolean
 }
 
-export function Button({ children, onClick }: ButtonProps) {
-  return <Container onClick={onClick}>{children}</Container>
+export function Button({ children, onClick, disabled }: ButtonProps) {
+  return (
+    <Container onClick={onClick} disabled={disabled}>
+      {children}
+    </Container>
+  )
 }

@@ -3,8 +3,11 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+
+  min-height: calc(100vh - 15rem);
 
   font-family: 'Poppins', sans-serif;
 
@@ -33,6 +36,44 @@ export const Container = styled.div`
   }
 
   img {
-    width: 36%;
+    width: max-content;
+    max-width: 36%;
+
+    height: fit-content;
+  }
+
+  @media screen and (max-width: 799px) {
+    .content-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0;
+    }
+
+    .content-text > span {
+      border-left: none;
+      padding: 0;
+      margin-bottom: 2rem;
+
+      text-align: center;
+    }
+
+    .content-text > .styled-input {
+      width: 100%;
+      align-self: center;
+    }
+
+    .content-text > button {
+      width: 100%;
+      align-self: center;
+
+      font-weight: bold;
+    }
+
+    img {
+      display: none;
+    }
   }
 `

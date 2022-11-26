@@ -1,8 +1,10 @@
-import { format } from 'date-fns'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { format } from 'date-fns'
+
 import { NavigationMenu } from '../../components/NavigationMenu'
 import api from '../../services/api'
+
 import { Container } from './styles'
 
 export interface CharacterProps {

@@ -7,6 +7,7 @@ export const Container = styled.div`
   justify-content: center;
 
   gap: 1rem;
+  padding: 1rem;
   font-family: 'Poppins', sans-serif;
   color: #fff;
 
@@ -45,5 +46,35 @@ export const Container = styled.div`
 
     gap: 1rem;
     margin-top: 1rem;
+  }
+
+  @media screen and (max-width: 799px) {
+    .content-character {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-character .details-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      text-align: center;
+
+      > .resume {
+        width: 80%;
+        margin-bottom: 2rem;
+
+        font-size: 0.8rem;
+      }
+    }
+
+    .details-with-image > div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      gap: 2rem;
+    }
   }
 `
