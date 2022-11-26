@@ -15,9 +15,9 @@ export function Home() {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setCharacter(event.target.value)
 
-    if (event.target.value === '') {
-      setIsDisabledButton(true)
-    }
+    event.target.value === ''
+      ? setIsDisabledButton(true)
+      : setIsDisabledButton(false)
   }
 
   const navigateToCharacter = () => {

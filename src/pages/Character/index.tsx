@@ -42,6 +42,10 @@ export function Character() {
     })
   }, [])
 
+  function formatDate(date: string) {
+    return format(new Date(date), 'mm/dd/yyyy')
+  }
+
   if (!character) return null
 
   return (
@@ -58,9 +62,8 @@ export function Character() {
             <span className="resume">
               {character.name} has his origin {character.origin.name}, is{' '}
               {character.species.toLowerCase()} and was created on{' '}
-              {format(new Date(character.created), 'mm-dd-yyyy')}. Altogether it
-              has had appearances in a {character?.episode.length} episodes
-              since its inception.
+              {formatDate(character.created)}. Altogether it has had appearances
+              in a {character?.episode.length} episodes since its inception.
             </span>
           </section>
 
