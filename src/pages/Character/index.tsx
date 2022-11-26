@@ -7,6 +7,8 @@ import { Error } from '../../components/Error'
 import api from '../../services/api'
 
 import { Container } from './styles'
+import { Loader } from '../../components/Loader'
+import { PageDefault } from '../../components/PageDefault'
 
 export interface CharacterProps {
   id: number
@@ -34,25 +36,30 @@ export interface Location {
 }
 
 export function Character() {
-  const [character, setCharacter] = useState<CharacterProps>()
+  const [isLoading, setIsLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
+  const [character, setCharacter] = useState<CharacterProps>()
   const { characterName } = useParams()
+
+  function formatDate(date: string) {
+    return format(new Date(date), 'mm/dd/yyyy')
+  }
 
   useEffect(() => {
     api
       .get(`/character/?name=${characterName}`)
       .then(response => {
         setCharacter(response.data.results[0])
+        setIsLoading(false)
       })
       .catch(error => {
         console.log(error.response.status)
+        setIsLoading(false)
         setHasError(true)
       })
   }, [])
 
-  function formatDate(date: string) {
-    return format(new Date(date), 'mm/dd/yyyy')
-  }
+  if (isLoading) return <Loader />
 
   if (!character || hasError)
     return (
@@ -63,8 +70,7 @@ export function Character() {
     )
 
   return (
-    <>
-      <NavigationMenu />
+    <PageDefault>
       <Container>
         <div className="content-character">
           <section className="details-text">
@@ -91,6 +97,6 @@ export function Character() {
           </section>
         </div>
       </Container>
-    </>
+    </PageDefault>
   )
 }

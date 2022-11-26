@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
-import { NavigationMenu } from '../../components/NavigationMenu'
+import { PageDefault } from '../../components/PageDefault'
 
 import { Container } from './styles'
 
@@ -25,8 +25,7 @@ export function Home() {
   }
 
   return (
-    <>
-      <NavigationMenu />
+    <PageDefault>
       <Container>
         <div className="content-text">
           <h1>Rick and Morty</h1>
@@ -46,6 +45,6 @@ export function Home() {
 
         <img src="/assets/background-image.png" alt="rick and morty image" />
       </Container>
-    </>
+    </PageDefault>
   )
 }

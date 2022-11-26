@@ -7,8 +7,6 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  min-height: calc(100vh - 15rem);
-
   font-family: 'Poppins', sans-serif;
 
   .content-text {

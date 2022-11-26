@@ -14,9 +14,6 @@ export const Container = styled.div`
 
   img {
     max-width: 36%;
-    /* width: max-content;
-
-    height: fit-content; */
   }
 
   @media screen and (max-width: 799px) {

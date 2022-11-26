@@ -8,6 +8,10 @@ export const Container = styled.nav`
 
   height: 6.25rem;
 
+  img {
+    width: 10rem;
+  }
+
   :hover {
     cursor: pointer;
   }
