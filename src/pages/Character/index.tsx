@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { format } from 'date-fns'
 
 import { NavigationMenu } from '../../components/NavigationMenu'
+import { Error } from '../../components/Error'
 import api from '../../services/api'
 
 import { Container } from './styles'
@@ -34,19 +35,32 @@ export interface Location {
 
 export function Character() {
   const [character, setCharacter] = useState<CharacterProps>()
+  const [hasError, setHasError] = useState(false)
   const { characterName } = useParams()
 
   useEffect(() => {
-    api.get(`/character/?name=${characterName}`).then(response => {
-      setCharacter(response.data.results[0])
-    })
+    api
+      .get(`/character/?name=${characterName}`)
+      .then(response => {
+        setCharacter(response.data.results[0])
+      })
+      .catch(error => {
+        console.log(error.response.status)
+        setHasError(true)
+      })
   }, [])
 
   function formatDate(date: string) {
     return format(new Date(date), 'mm/dd/yyyy')
   }
 
-  if (!character) return null
+  if (!character || hasError)
+    return (
+      <>
+        <NavigationMenu />
+        <Error />
+      </>
+    )
 
   return (
     <>
