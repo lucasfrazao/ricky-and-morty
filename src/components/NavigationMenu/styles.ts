@@ -7,4 +7,8 @@ export const Container = styled.nav`
   align-content: center;
 
   height: 6.25rem;
+
+  :hover {
+    cursor: pointer;
+  }
 `

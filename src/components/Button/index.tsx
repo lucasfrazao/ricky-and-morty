@@ -1,10 +1,11 @@
-import { ReactNode } from 'react'
+import { ButtonHTMLAttributes, ReactNode } from 'react'
 import { Container } from './styles'
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
+  onClick: () => void
 }
 
-export function Button({ children }: ButtonProps) {
-  return <Container>{children}</Container>
+export function Button({ children, onClick }: ButtonProps) {
+  return <Container onClick={onClick}>{children}</Container>
 }
