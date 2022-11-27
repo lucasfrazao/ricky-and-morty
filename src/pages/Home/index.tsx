@@ -39,7 +39,7 @@ export function Home() {
           />
 
           <Button onClick={navigateToCharacter} disabled={isDisabledButton}>
-            {character.length > 0 ? 'Search' : 'View all'}
+            Search
           </Button>
         </div>
 

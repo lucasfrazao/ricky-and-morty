@@ -10,3 +10,12 @@ export const Container = styled.div`
     margin-top: 1rem;
   }
 `
+
+export const GroupButtons = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 2rem;
+  margin-top: 2rem;
+`
