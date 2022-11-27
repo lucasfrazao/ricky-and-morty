@@ -16,4 +16,6 @@ export const ContentMain = styled.div`
   width: 100%;
   max-width: 67.5rem;
   min-height: calc(100vh - 15rem);
+
+  padding: 2rem 0 4rem;
 `
