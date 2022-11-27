@@ -9,14 +9,17 @@ export const Container = styled.nav`
   gap: 4rem;
   height: 6.25rem;
 
-  a {
-    text-decoration: none;
+  button {
     color: #fff;
     font-family: 'Poppins', sans-serif;
     transition: 0.2s;
+
+    background: none;
+    border: none;
   }
 
-  a:hover {
+  button:hover {
+    cursor: pointer;
     color: #c0da35;
   }
 
@@ -31,7 +34,7 @@ export const Container = styled.nav`
   @media screen and (max-width: 799px) {
     gap: 2rem;
 
-    a {
+    button {
       font-size: 0.8rem;
     }
 

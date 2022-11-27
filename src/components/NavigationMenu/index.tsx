@@ -8,16 +8,21 @@ export function NavigationMenu() {
     navigate('/')
   }
 
+  const navigateCharacters = () => {
+    navigate('/all-characters')
+  }
+
   return (
     <Container>
-      <a href="/">Home</a>
+      <button onClick={() => navigateHome()}>Home</button>
+
       <img
         role="button"
         src="https://logosmarcas.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png"
         alt="logo rick and morty"
         onClick={() => navigateHome()}
       />
-      <a href="/all-characters">Characters</a>
+      <button onClick={() => navigateCharacters()}>Characters</button>
     </Container>
   )
 }
