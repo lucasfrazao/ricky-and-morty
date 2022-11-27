@@ -17,7 +17,7 @@ export function NavigationMenu() {
         alt="logo rick and morty"
         onClick={() => navigateHome()}
       />
-      <a href="/characters">Characters</a>
+      <a href="/all-characters">Characters</a>
     </Container>
   )
 }
