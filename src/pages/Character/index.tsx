@@ -59,9 +59,9 @@ export function Character() {
       })
   }, [])
 
-  if (isLoading) return <Loader />
+  if (!character) return null
 
-  if (!character || hasError)
+  if (hasError)
     return (
       <>
         <NavigationMenu />
@@ -71,32 +71,37 @@ export function Character() {
 
   return (
     <PageDefault>
-      <Container>
-        <div className="content-character">
-          <section className="details-text">
-            <h1>{character.name}</h1>
-            <span>Origin: {character.origin.name}</span>
-            <span>Specie: {character.species}</span>
-            <span>Status: {character.status}</span>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <Container>
+          <div className="content-character">
+            <section className="details-text">
+              <h1>{character.name}</h1>
+              <span>Origin: {character.origin.name}</span>
+              <span>Specie: {character.species}</span>
+              <span>Status: {character.status}</span>
 
-            <span className="resume">
-              {character.name} has his origin {character.origin.name}, is{' '}
-              {character.species.toLowerCase()} and was created on{' '}
-              {formatDate(character.created)}. Altogether it has had appearances
-              in a {character?.episode.length} episodes since its inception.
-            </span>
-          </section>
+              <span className="resume">
+                {character.name} has his origin {character.origin.name}, is{' '}
+                {character.species.toLowerCase()} and was created on{' '}
+                {formatDate(character.created)}. Altogether it has had
+                appearances in a {character?.episode.length} episodes since its
+                inception.
+              </span>
+            </section>
 
-          <section className="details-with-image">
-            <img src={character.image} alt="character image" />
+            <section className="details-with-image">
+              <img src={character.image} alt="character image" />
 
-            <div>
-              <span>{character.location.name}</span>
-              <span>{character.gender}</span>
-            </div>
-          </section>
-        </div>
-      </Container>
+              <div>
+                <span>{character.location.name}</span>
+                <span>{character.gender}</span>
+              </div>
+            </section>
+          </div>
+        </Container>
+      )}
     </PageDefault>
   )
 }

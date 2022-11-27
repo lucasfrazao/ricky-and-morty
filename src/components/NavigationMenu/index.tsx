@@ -10,12 +10,14 @@ export function NavigationMenu() {
 
   return (
     <Container>
+      <a href="/">Home</a>
       <img
         role="button"
         src="https://logosmarcas.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png"
         alt="logo rick and morty"
         onClick={() => navigateHome()}
       />
+      <a href="/characters">Characters</a>
     </Container>
   )
 }

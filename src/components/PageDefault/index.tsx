@@ -1,5 +1,8 @@
 import { ReactNode } from 'react'
+
 import { NavigationMenu } from '../NavigationMenu'
+import { Footer } from '../Footer'
+
 import { Container, ContentMain } from './styles'
 
 interface PageDefaultProps {
@@ -12,6 +15,8 @@ export function PageDefault({ children }: PageDefaultProps) {
       <NavigationMenu />
 
       <ContentMain>{children}</ContentMain>
+
+      <Footer />
     </Container>
   )
 }
