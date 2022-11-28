@@ -1,5 +1,5 @@
 <p align="center">
-Project created with target to studying and improve my knowledges. Home page design inspired by <a href="https://dribbble.com/shots/14794508-Rick-And-Morty-Concept-Page">Rick And Morty Concept Page</a> and consuming <a href="https://rickandmortyapi.com/">The Rick and Morty API</a>.
+Project created with target to study and improve my knowledges. Home page design inspired by <a href="https://dribbble.com/shots/14794508-Rick-And-Morty-Concept-Page">Rick And Morty Concept Page</a> and consuming <a href="https://rickandmortyapi.com/">The Rick and Morty API</a>.
 </p>
 
 <p align="center">
